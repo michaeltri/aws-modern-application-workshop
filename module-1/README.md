@@ -1,6 +1,6 @@
 # Module 1: IDE Setup and Static Website Hosting
 
-![Architecture](/images/module-1/architecture-module-1.png)
+![Architecture](../images/module-1/architecture-module-1.png)
 
 **Time to complete:** 20 minutes
 
