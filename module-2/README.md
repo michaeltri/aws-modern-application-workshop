@@ -1,6 +1,6 @@
 # Module 2: Creating a Service with AWS Fargate
 
-![Architecture](/images/module-2/architecture-module-2.png)
+![Architecture](../images/module-2/architecture-module-2.png)
 
 **Time to complete:** 60 minutes
 
@@ -45,7 +45,7 @@ aws cloudformation describe-stacks --stack-name MythicalMysfitsCoreStack
 ```
 
 Run the the `describe-stacks` command, until you see a status of ```"StackStatus": "CREATE_COMPLETE"```
-![cfn-complete.png](/images/module-2/cfn-complete.png)
+![cfn-complete.png](../images/module-2/cfn-complete.png)
 
 
 When you get this response, CloudFormation has finished provisioning all of the core networking and security resources described above and you can proceed. Wait for the above stack to show `CREATE_COMPLETE` before proceeding on.   
@@ -105,13 +105,15 @@ As a result you will see docker reporting that your container is up and running 
 
 To test our service with a local request, we're going to open up the built-in web browser within the Cloud9 IDE that can be used to preview applications that are running on the IDE instance.  To open the preview web browser, select **Preview > Preview Running Application** in the Cloud9 menu bar:
 
-![preview-menu](/images/module-2/preview-menu.png)
+![preview-menu](../images/module-2/preview-menu.png)
 
 This will open another panel in the IDE where the web browser will be available.  Append /mysfits to the end of the URI in the address bar of the preview browser in the new panel and hit enter:
 
-![preview-menu](/images/module-2/address-bar.png)
+![preview-menu](../images/module-2/address-bar.png)
 
 If successful you will see a response from the service that returns the JSON document stored at `/aws-modern-application-workshop/module-2/app/service/mysfits-response.json`
+
+**Note:** In order for preview to work you need to enable 3rd party cookies in your browser
 
 When done testing the service you can stop it by pressing CTRL-c on PC or Mac.
 
@@ -174,7 +176,9 @@ A JSON file has been provided that will serve as the input to the CLI command.
 
 Open `~/environment/aws-modern-application-workshop/module-2/aws-cli/task-definition.json` in the IDE.
 
-Replace the indicated values with the appropriate ones from your created resources.  
+Replace the indicated values with the appropriate ones from your created resources.
+
+**Note:** See the file `cloudformation-core-output.json`  
 
 These values will be pulled from the CloudFormation response you copied earlier as well as the docker image tag that you pushed earlier to ECR, eg: `REPLACE_ME_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mythicalmysfits/service:latest`
 
